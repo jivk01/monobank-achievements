@@ -17,7 +17,8 @@ $ npm i -g mono-achievements
 ## From source code
 1. Copy source code from the [repo](https://github.com/jivk01/monobank-achievements)
 2. Install dependecies with `npm i`
-3. Next, install package globally using `npm link`
+3. Build package with `npm run build`
+4. Next, install package globally using `npm link`
 
 To install package as a dependence, go to your project's directory and execute following command: `npm link mono-achievements`
 
