@@ -1,0 +1,26 @@
+{
+  "name": "mono-achievements",
+  "version": "0.0.1",
+  "keywords": ["cli", "image"],
+  "author": "Jivk",
+  "license": "ISC",
+  "description": "Simple library for generating monobank-like achievement images",
+
+  "main": "./dist/lib/index.js",
+  "module": "./dist/lib/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "mono": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "canvas": "^2.11.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2"
+  }
+}
