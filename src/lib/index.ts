@@ -35,7 +35,7 @@ export class MonoAchievement {
     this.#topColor = options.topColor ? options.topColor : this.#topColor
     this.#bottomColor = options.bottomColor ? options.bottomColor : this.#bottomColor
 
-    if (options.closeIcon === false) this.#closeIcon = false
+    this.#closeIcon = typeof options.closeIcon === 'boolean' ? options.closeIcon : false
 
     this.#image = options.image
   }
