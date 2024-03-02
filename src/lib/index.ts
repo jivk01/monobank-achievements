@@ -11,9 +11,9 @@ export class MonoAchievement {
 
   #title: string
   #description: string
-  #topColor: string
-  #bottomColor: string
-  #closeIcon: boolean = true
+  #topColor: string = 'blue'
+  #bottomColor: string = 'yellow'
+  #closeIcon: boolean = false
   #image: string | Buffer
 
   #loaded: boolean = false
@@ -21,8 +21,8 @@ export class MonoAchievement {
   constructor(options: {
     title: string,
     description: string,
-    topColor: string,
-    bottomColor: string,
+    topColor?: string,
+    bottomColor?: string,
     image: string | Buffer,
     closeIcon?: boolean
   }) {
@@ -32,8 +32,8 @@ export class MonoAchievement {
     if (options.description.length > 160) throw new RangeError('Description is too big (120 characters allowed)')
     this.#description = options.description
 
-    this.#topColor = options.topColor
-    this.#bottomColor = options.bottomColor
+    this.#topColor = options.topColor ? options.topColor : this.#topColor
+    this.#bottomColor = options.bottomColor ? options.bottomColor : this.#bottomColor
 
     if (options.closeIcon === false) this.#closeIcon = false
 
@@ -46,7 +46,6 @@ export class MonoAchievement {
     this.canvasService.drawTitle(this.#title)
     this.canvasService.drawDescription(this.#description)
 
-    console.log(path.resolve(__dirname, '../../assets/close.png'))
     if (this.#closeIcon) {
       this.canvasService.drawImage(48, 48, 48, 48, path.resolve(__dirname, '../../assets/close.png'))
     }

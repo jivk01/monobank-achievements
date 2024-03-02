@@ -81,7 +81,6 @@ export class TextService {
       const firstLine = lines[0]
       const measurements = this.ctx.measureText(firstLine)
       const maxWidth = Math.min(finalOptions.maxWidth, this.measureMaxWidth(lines, font))
-      console.log('max width:', maxWidth)
       x = x === 'center' ? (this.width - maxWidth) / 2 : x
       y = y === 'center' ? (this.height + measurements.actualBoundingBoxAscent) / 2 : y + measurements.actualBoundingBoxAscent
 

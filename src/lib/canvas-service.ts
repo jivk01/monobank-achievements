@@ -53,15 +53,13 @@ export class CanvasService {
   }
 
   drawTitle(title: string) {
-    this.ctx.font = '100px "Inter Bold"'
     this.textService.drawText(title, { x: 'center', y: 930 }, {
-      fontFamily: 'Inter Regular',
+      fontFamily: 'Inter Bold',
       fontSize: 100,
     })
   }
 
   drawDescription(description: string) {
-    this.ctx.font = '100px "Inter Bold"'
     this.textService.drawText(description, { x: 'center', y: 1090 }, {
       textWrap: true
     })
